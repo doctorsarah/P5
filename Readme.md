@@ -30,16 +30,26 @@ Use the provided code to extract width, height, and maximum value (255) from the
 
 ### A Versions
 Do **one** of the following image manipulations:
+
 **Rotate 90**: Rotate the image 90° clockwise. Update the width and height accordingly.
+
 **Vertical Flip**: Flip the image from top to bottom.
+
 **Horizontal Flip**: Flip the image from left to right.
+
 **Resize**: Prompt for a new width and height, and resize the image to match.
+
 **Monochrome**: Pick a color, and put the whole image in shades of that color. See [Chrominance (Wikipedia)](https://en.wikipedia.org/wiki/Chrominance) for more information. Compute the 2 components of chrominance for your chosen color: 
 **Cb = -.147 × red - .289 × green + .436 × blue**
+
 **Cr =  .615 × red - .515 × green - .1 × blue**
+
 For each pixel, compute its luminance **(lum = red×.3 + green×.59 + blue×.11)**, then apply your chosen colors chrominance:
+
 **red   = lum + 1.14 × Cr**
+
 **green = lum - .395 × Cb - .581 × Cr**
+
 **blue  = lum + 2.032 × Cb**
 
 ### Extra Credit Versions
