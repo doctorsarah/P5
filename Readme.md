@@ -21,6 +21,7 @@ Use the provided code to extract width, height, and maximum value (255) from the
 
 ### Conversions and Corrections
 **Signed to unsigned**: Java byte variables have values in the range [-128, 127]. If you are using any mathematical formulas, you need the values to be in the range [0, 255]. -128 --> 128. -127 --> 129. -1 --> 255. (Once your formulas are complete, you can assign them back to bytes and not worry about the sign value.) I recommend creating a **removeSign** method to perform the conversion for integers.
+
 **Overflow and underflow**: If you perform math on a pixel channel that was in the range [0,255], you may get a result out of bounds (negative or greater than 255). I recommend creating a **cap** method that ensures an integer is in the range [0, 255].
 
 ## Versions
