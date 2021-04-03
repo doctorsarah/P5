@@ -29,44 +29,35 @@ Use the provided code to extract width, height, and maximum value (255) from the
 **Grayscale**: Convert the image to grayscale. For each pixel **grayscale = (red×.3 + green×.59 + blue×.11)**. You should round the result. Use the grayscale value as the new red, green, and blue values.
 
 ### A Versions
-Do **one** of the following image manipulations:
+Do **one** of the following image manipulations:<br/>
+**Rotate 90**: Rotate the image 90° clockwise. Update the width and height accordingly.<br/>
+**Vertical Flip**: Flip the image from top to bottom.<br/>
+**Horizontal Flip**: Flip the image from left to right.<br/>
+**Resize**: Prompt for a new width and height, and resize the image to match.<br/>
+**Monochrome**: Pick a color, and put the whole image in shades of that color. See [Chrominance (Wikipedia)](https://en.wikipedia.org/wiki/Chrominance) for more information. Compute the 2 components of chrominance for your chosen color: <br/>
+**Cb = -.147 × red - .289 × green + .436 × blue**<br/>
+**Cr =  .615 × red - .515 × green - .1 × blue**<br/>
 
-**Rotate 90**: Rotate the image 90° clockwise. Update the width and height accordingly.
-
-**Vertical Flip**: Flip the image from top to bottom.
-
-**Horizontal Flip**: Flip the image from left to right.
-
-**Resize**: Prompt for a new width and height, and resize the image to match.
-
-**Monochrome**: Pick a color, and put the whole image in shades of that color. See [Chrominance (Wikipedia)](https://en.wikipedia.org/wiki/Chrominance) for more information. Compute the 2 components of chrominance for your chosen color: 
-**Cb = -.147 × red - .289 × green + .436 × blue**
-
-**Cr =  .615 × red - .515 × green - .1 × blue**
-
-For each pixel, compute its luminance **(lum = red×.3 + green×.59 + blue×.11)**, then apply your chosen colors chrominance:
-
-**red   = lum + 1.14 × Cr**
-
-**green = lum - .395 × Cb - .581 × Cr**
-
-**blue  = lum + 2.032 × Cb**
+For each pixel, compute its luminance **(lum = red×.3 + green×.59 + blue×.11)**, then apply your chosen colors chrominance:<br/>
+**red   = lum + 1.14 × Cr**<br/>
+**green = lum - .395 × Cb - .581 × Cr**<br/>
+**blue  = lum + 2.032 × Cb**<br/>
 
 ### Extra Credit Versions
-**Tile**: Prompt for a new width and height, and tile the input image into the new (larger) image.
-**Convolution Filter**: Apply any 3×3 convolution filter to the image. For each pixel channel, multiply the filter by it and the 8 pixel channels surrounding it (once for red, for green, and for blue), and use the sum as the new channel value.
-**blur filter**
-[1/9, 1/9, 1/9]
-[1/9, 1/9, 1/9]
-[1/9, 1/9, 1/9]
-**sharpen filter**
-[-1, -1, -1]
-[-1,  9, -1]
-[-1, -1, -1]
-**horizontal emboss filter**
-[-1, -1, -1]
-[ 2,  2,  2]
-[-1, -1, -1]
+**Tile**: Prompt for a new width and height, and tile the input image into the new (larger) image.<br/>
+**Convolution Filter**: Apply any 3×3 convolution filter to the image. For each pixel channel, multiply the filter by it and the 8 pixel channels surrounding it (once for red, for green, and for blue), and use the sum as the new channel value.<br/>
+**blur filter**<br/>
+[1/9, 1/9, 1/9]<br/>
+[1/9, 1/9, 1/9]<br/>
+[1/9, 1/9, 1/9]<br/>
+**sharpen filter**<br/>
+[-1, -1, -1]<br/>
+[-1,  9, -1]<br/>
+[-1, -1, -1]<br/>
+**horizontal emboss filter**<br/>
+[-1, -1, -1]<br/>
+[ 2,  2,  2]<br/>
+[-1, -1, -1]<br/>
 
 ## Recommended Phases
 1. Read the image and output it as.
