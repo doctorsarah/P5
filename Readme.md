@@ -20,13 +20,13 @@ Use java.io.FileOutputStream to create the output image with some manipulation.
 Use the provided code to extract width, height, and maximum value (255) from the file.
 
 ### Conversions and Corrections
-**Signed to unsigned**: Java byte variables have values in the range [-128, 127]. If you are using any mathematical formulas, you need the values to be in the range [0, 255]. -128 --> 128. -127 --> 129. -1 --> 255. (Once your formulas are complete, you can assign them back to bytes and not worry about the sign value.) I recommend creating a **removeSign** method to perform the conversion for integers.
+**Signed to unsigned**: Java byte variables have values in the range [-128, 127]. If you are using any mathematical formulas, you need the values to be in the range [0, 255]. ```-128 --> 128. -127 --> 129. -1 --> 255```. (Once your formulas are complete, you can assign them back to bytes and not worry about the sign value.) I recommend creating a **removeSign** method to perform the conversion for integers.
 
 **Overflow and underflow**: If you perform math on a pixel channel that was in the range [0,255], you may get a result out of bounds (negative or greater than 255). I recommend creating a **cap** method that ensures an integer is in the range [0, 255].
 
 ## Versions
 ### B Version
-**Grayscale**: Convert the image to grayscale. For each pixel **grayscale = (red×.3 + green×.59 + blue×.11)**. You should round the result. The grayscale value as the new red, green, and blue values.
+**Grayscale**: Convert the image to grayscale. For each pixel **grayscale = (red×.3 + green×.59 + blue×.11)**. You should round the result. Use the grayscale value as the new red, green, and blue values.
 
 ### A Versions
 Do **one** of the following image manipulations:
